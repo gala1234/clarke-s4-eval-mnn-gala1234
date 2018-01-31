@@ -63,7 +63,7 @@ this.setState({
 			{ this.paintCharacter() }
 			</main>
 			<footer className="Footer">
-			<span>Harry's App &copy; by
+			<span>Potter's App &copy; by
 			<a className="Footer__link--gala" href="www.galacalero.com"> Gala Calero</a>
 			</span>
 			<a className="Footer__link--adalab-color" href="http://www.adalab.es/" title="Adalab">
