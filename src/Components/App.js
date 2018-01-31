@@ -56,6 +56,7 @@ this.setState({
       <div className="App">
 			<header className="Header">
 			<h1 className="Header__title">My Harry Potter Characters</h1>
+			<p className="Header__paragraph">You are on the Potter's App, here you can search your favourite characters by name and sow his/her/it information. Enjoy it!</p>
 			<input className="Header__search" type="text" placeholder="Search a character" onChange={ this.handleSearch } />
 			</header>
 			<main className="Main">
