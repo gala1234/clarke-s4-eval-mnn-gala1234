@@ -61,6 +61,14 @@ this.setState({
 			<main className="Main">
 			{ this.paintCharacter() }
 			</main>
+			<footer className="Footer">
+			<span>Harry's App &copy; by
+			<a className="Footer__link--gala" href="www.galacalero.com"> Gala Calero</a>
+			</span>
+			<a className="Footer__link--adalab-color" href="http://www.adalab.es/" title="Adalab">
+			<div className="Footer__link--adalab"></div>
+			</a>
+			</footer>
       </div>
     );
   }

@@ -1,23 +1,36 @@
+@font-face {
+	font-family: 'Harry';
+	src: URL('../Fonts/Harrp.ttf') format('ttf');
+}
+
 * {
 	box-sizing: border-box;
 }
 
 .App {
 	text-align: center;
+	font-size: 16px;
 }
 .Header {
-margin-bottom: 3%;
+	padding: 3% 0;
+	background-color: #AE364F;
+	color: #BDB7B7;
+	/* border-bottom: 1px #5D5A62 solid; */
 }
 .Header__title {
- margin: 3% 0;
+	font-family: 'Harry';
+	font-size: 3em;
+	margin: 0;
+	text-shadow: 2px 2px #5D5A62;
 }
 
 .Header__search {
+	margin-top: 3%;
 	width: 60%;
 }
 .Main {
-	padding: 5vh 5%;
-	background-color: lightgrey;
+	padding: 10vh 5%;
+	background-color: #EEEEEE;
 }
 
 .Articles {
@@ -25,18 +38,19 @@ margin-bottom: 3%;
 	margin: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
 }
 .Article {
 	grid-column: span 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 10%;
+	border-radius: 10px;
 	border: 1px black solid;
-
+	background-color: #5D5A62;
 }
+
 .Article__name--div {
 	display: flex;
 	justify-content: center;
@@ -44,20 +58,42 @@ margin-bottom: 3%;
 	height: 60px;
 	width: 100%;
 	margin: 0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	border-bottom: 1px black solid;
+	overflow: hidden;
+	background-color: black;
+	color: white;
+	font-size: 1em;
+}
+.Article__name--div--Gryffindor {
+	background-color: #C71522;
+	color: #FDBF2D;
+}
+.Article__name--div--Slytherin {
+	background-color: #2EA04B;
+	color: #CDCDCD;
+}
+.Article__name--div--Hufflepuff {
+	background-color: #FED54C;
+	color: #272727;
+}
+.Article__name--div--Ravenclaw {
+	background-color: #BE9267;
+	color: #095780;
 }
 .Article__name {
 	margin: 0;
 }
 
 .Article__img--div {
-	margin-top: 5%;
+	margin: 5% 0;
 	height: 220px;
 	width: 60%;
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: cover;
-
+	border: 1px black solid;
 }
 .Article__img {
 	width: 0;
@@ -69,6 +105,8 @@ margin-bottom: 3%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+	border-top: 1px black solid;
+	background-color: #BDB7B7;
 }
 
 .icon {
@@ -97,6 +135,35 @@ margin-bottom: 3%;
 	background-image: url(../Img/skull.svg);
 }
 
+.Footer {
+	color: white;
+	border-top: 20px #000000 solid;
+	background-color: #14405E;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: .7em;
+	padding: 0 10%;
+}
+.Footer__link--gala {
+	text-decoration: none;
+	color: white;
+}
+.Footer__link--adalab-color{
+	background-color: white;
+	width: 80px;
+	height: 30px;
+}
+.Footer__link--adalab{
+	width: 80px;
+	height: 30px;
+	background-image: url(../Img/logoAdalab.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
 @media (max-width: 1200px) {
 	.Articles	{
 		grid-template-columns: 1fr 1fr 1fr;

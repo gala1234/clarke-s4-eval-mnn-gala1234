@@ -5,7 +5,7 @@ class Characters extends React.Component {
 render() {
 	return (
 		<article className="Article">
-		<div className="Article__name--div">
+		<div className={`Article__name--div  Article__name--div--${this.props.house}`}>
 		<h2 className="Article__name">{this.props.name}</h2>
 		</div>
 		<div className="Article__img--div" title={this.props.name} style={{backgroundImage:`url(${this.props.image})`}}>
