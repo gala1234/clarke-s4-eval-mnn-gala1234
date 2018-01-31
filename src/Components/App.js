@@ -10,7 +10,8 @@ class App extends React.Component {
 		this.handleSearch=this.handleSearch.bind(this);
 
 		this.state = {
-			charactersArr: []
+			charactersArr: [],
+			lettersOnSearch:''
 		};
 	}
 
@@ -25,14 +26,15 @@ class App extends React.Component {
 	}
 
 paintCharacter() {
-	let CharacterToShow = this.state.charactersArr;
-	return (<ul>
+	const CharacterToShow = this.state.charactersArr.filter(filteredItem => filteredItem.name.toLowerCase().includes(this.state.lettersOnSearch)); //Pasamos una condicion que debe cumplir cada item, si cumplen van dentro, si no, se quedan fuera de la función.
+	return (<ul className="Articles">
 		{
 			CharacterToShow.map(
-				character => <article className="Article">
-				<Characters name={character.name} image={character.image} house={character.house} alive={character.alive? 'live':'dead'} />
-				</article>
-
+				item =>
+				<Characters name={item.name} image={item.image}
+				house={item.house}
+				alive={item.alive?
+					'live':'dead'} />
 			)
 		}
 		</ul>
@@ -40,16 +42,25 @@ paintCharacter() {
 }
 
 handleSearch (event) {
-
+let characterSearched = event.currentTarget.value;
+// console.log(characterSearched);
+this.setState({
+	lettersOnSearch:characterSearched.toLowerCase()
+});
 }
 
 
   render() {
+		console.log(this.state.lettersOnSearch);
     return (
       <div className="App">
-			<h1 className="Title">My Harry Potter Characters</h1>
-			<input className="Search" type="text" onChange={ this.handleSearch }></input>
+			<header className="Header">
+			<h1 className="Header__title">My Harry Potter Characters</h1>
+			<input className="Header__search" type="text" placeholder="Search a character" onChange={ this.handleSearch } />
+			</header>
+			<main className="Main">
 			{ this.paintCharacter() }
+			</main>
       </div>
     );
   }
