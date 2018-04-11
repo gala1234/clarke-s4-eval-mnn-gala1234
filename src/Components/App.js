@@ -51,7 +51,7 @@ this.setState({
 
 
   render() {
-		// console.log(this.state.lettersOnSearch);
+		console.log(this.state.lettersOnSearch);
     return (
       <div className="App">
 			<header className="Header">
